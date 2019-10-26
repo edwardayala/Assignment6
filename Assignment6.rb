@@ -38,6 +38,7 @@ end
 
 def delete_d_array(da)
   to_be_deleted = []
+  puts
   da.each {|a|
     if a.end_with?('a')
       puts 'Deleting ' << a << ' from Dynamic Array...'
@@ -108,10 +109,10 @@ print_d_array(rb_array)
 
 
 delete_hash(rb_hash)
+delete_d_array(rb_array)
+
 puts "\nRuby Associative Array After Delete:"
 print_hash(rb_hash)
-
-delete_d_array(rb_array)
 puts "\nRuby Dynamic Array After Delete:"
 print_d_array(rb_array)
 
