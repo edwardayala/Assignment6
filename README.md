@@ -21,4 +21,5 @@ In Python, C++ and one other language, your group (up to three people) are to cr
 * http://www.rubyinside.com/how-to/ruby-sort-hash
 
 ### C++:
-...
+* http://www.cplusplus.com/reference/map/map/
+* http://www.cplusplus.com/reference/vector/vector/
