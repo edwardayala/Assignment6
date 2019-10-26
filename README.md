@@ -23,3 +23,4 @@ In Python, C++ and one other language, your group (up to three people) are to cr
 ### C++:
 * http://www.cplusplus.com/reference/map/map/
 * http://www.cplusplus.com/reference/vector/vector/
+* https://stackoverflow.com/questions/5056645/sorting-stdmap-using-value
