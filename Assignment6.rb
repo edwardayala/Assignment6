@@ -51,3 +51,31 @@ puts "\nRuby Associative Array:"
 print_hash(rb_hash)
 puts "\nRuby Dynamic Array:"
 print_d_array(rb_array)
+
+rb_hash[:Lisa] = 21                # ends with a
+rb_hash[:Lauren] = 32
+rb_hash[:Samantha] = 44            # ends with a
+rb_hash[:Alexis] = 54
+rb_hash[:Jennifer] = 63
+rb_hash[:Miranda] = 27             # ends with a
+rb_hash[:Elizabeth] = 38
+rb_hash[:Mary] = 49
+rb_hash[:Julia] = 42               # ends with a
+rb_hash[:Vanessa] = 36             # ends with a
+
+rb_array.push('Lisa')           # ends with a
+rb_array.push('Lauren')
+rb_array.push('Samantha')       # ends with a
+rb_array.push('Alexis')
+rb_array.push('Jennifer')
+rb_array.push('Miranda')        # ends with a
+rb_array.push('Elizabeth')
+rb_array.push('Mary')
+rb_array.push('Julia')          # ends with a
+rb_array.push('Vanessa')        # ends with a
+
+puts "\nUpdated Ruby Associative Array:"
+print_hash(rb_hash)
+puts "\nUpdated Ruby Dynamic Array:"
+print_d_array(rb_array)
+
