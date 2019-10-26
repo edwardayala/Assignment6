@@ -1,0 +1,5 @@
+# Assignment6
+Assignment 6: Exploring Languages with Associative Arrays, Dynamic Lists, and Iteration
+
+## Instructions:
+In Python, C++ and one other language, your group (up to three people) are to create the same maps (associative arrays) and dynamic lists (vectors will work in C++). In a function you should then iterate over those structures in each languages outputting the contents of them. The print function should be called after adding 10 items and then again after adding another 10. The print function should be called a final time after deleting 5 specific items (you should try to find these items to delete not just delete a random element). Additionally, in a function, sort the data remaining in the dynamic list. You may use built in sort functionality but it must be in a function. Include one last print function call to show the sorted data. In C++, be sure to use map, vector and iterators to achieve this. The data types you choose to use for this assignment are not important but should be the same in each language.
