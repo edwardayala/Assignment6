@@ -13,8 +13,8 @@
 
 #include <iostream>
 #include <map>
-#include <unordered_map>
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -27,6 +27,55 @@ void printVector(vector<string> const& v){
     for (auto & i : v)
         cout << i << endl;
 }
+
+void deleteKeys(map<string,int> &m){
+    cout << endl;
+    vector<string> toBeDeleted;
+    for (auto & i : m) {
+        if (i.first.back() == 'a') {
+            cout << "Deleting " << i.first << " from Associative Array..." << endl;
+            toBeDeleted.emplace_back(i.first);
+        }
+    }
+    for (auto & i : toBeDeleted)
+        m.erase(i);
+}
+
+void deleteIndexes(vector<string> &v){
+    cout << endl;
+    vector<string>::iterator it;
+    for (it = v.begin(); it != v.end(); ++it ){
+        if (it->back() == 'a'){
+            cout << "Deleting " << *it << " from Dynamic Array..." << endl;
+            v.erase(it);
+        }
+    }
+    cout << "Deleting Vanessa from Dynamic Array..." << endl;
+    v.pop_back(); // deletes "Vanessa" because other strategies didn't work like in Python & Ruby
+}
+
+
+// to sort by values instead of keys -- https://stackoverflow.com/questions/5056645/sorting-stdmap-using-value
+template<typename A, typename B>
+std::pair<B,A> flip_pair(const std::pair<A,B> &p)
+{
+    return std::pair<B,A>(p.second, p.first);
+}
+
+template<typename A, typename B>
+std::multimap<B,A> flip_map(const std::map<A,B> &src)
+{
+    std::multimap<B,A> dst;
+    std::transform(src.begin(), src.end(), std::inserter(dst, dst.begin()),
+                   flip_pair<A,B>);
+    return dst;
+}
+
+void printSortedMap(multimap<int,string> const& m){
+    for (auto & i : m)
+        cout << i.second << " is " << i.first << " years old.\n";
+}
+
 
 int main(){
     map<string, int> cppMap {
@@ -41,7 +90,6 @@ int main(){
             {"James", 41},
             {"Bill", 36}
     };
-//    map<string, int>::iterator i;
 
     vector<string> cppVector;
     cppVector.emplace_back("Bob");
@@ -88,4 +136,18 @@ int main(){
     cout << "\nUpdated C++ Vector:" << endl;
     printVector(cppVector);
 
+    deleteKeys(cppMap);
+    deleteIndexes(cppVector);
+    cout << "\nC++ Map After Delete:" << endl;
+    printMap(cppMap);
+    cout << "\nC++ Vector After Delete:" << endl;
+    printVector(cppVector);
+
+    cout << "\nSorted C++ Map (Key):" << endl;
+    printMap(cppMap);
+    cout << "\nSorted C++ Map (Value):" << endl;
+    printSortedMap(flip_map(cppMap));
+    cout << "\nSorted C++ Vector:" << endl;
+    sort(cppVector.begin(), cppVector.end());
+    printVector(cppVector);
 }
