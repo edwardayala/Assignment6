@@ -22,6 +22,33 @@ def print_d_array(d)
   d.each(&method(:puts))
 end
 
+def delete_hash(h)
+  to_be_deleted = []
+  puts
+  h.each {|k, v|
+    if String(k).end_with?('a')
+      puts 'Deleting ' << String(k) << ' from Associative Array...'
+      to_be_deleted.push(k)
+    end
+  }
+  to_be_deleted.each do |d|
+    h.delete(d)
+  end
+end
+
+def delete_d_array(da)
+  to_be_deleted = []
+  da.each {|a|
+    if a.end_with?('a')
+      puts 'Deleting ' << a << ' from Dynamic Array...'
+      to_be_deleted.push(a)
+    end
+  }
+  to_be_deleted.each do |d|
+    da.delete(d)
+  end
+end
+
 rb_hash = {
     'Bob': 34,
     'John': 26,
@@ -52,16 +79,16 @@ print_hash(rb_hash)
 puts "\nRuby Dynamic Array:"
 print_d_array(rb_array)
 
-rb_hash[:Lisa] = 21                # ends with a
+rb_hash[:Lisa] = 21                 # ends with a
 rb_hash[:Lauren] = 32
-rb_hash[:Samantha] = 44            # ends with a
+rb_hash[:Samantha] = 44             # ends with a
 rb_hash[:Alexis] = 54
 rb_hash[:Jennifer] = 63
-rb_hash[:Miranda] = 27             # ends with a
+rb_hash[:Miranda] = 27              # ends with a
 rb_hash[:Elizabeth] = 38
 rb_hash[:Mary] = 49
-rb_hash[:Julia] = 42               # ends with a
-rb_hash[:Vanessa] = 36             # ends with a
+rb_hash[:Julia] = 42                # ends with a
+rb_hash[:Vanessa] = 36              # ends with a
 
 rb_array.push('Lisa')           # ends with a
 rb_array.push('Lauren')
@@ -79,3 +106,22 @@ print_hash(rb_hash)
 puts "\nUpdated Ruby Dynamic Array:"
 print_d_array(rb_array)
 
+
+delete_hash(rb_hash)
+puts "\nRuby Associative Array After Delete:"
+print_hash(rb_hash)
+
+delete_d_array(rb_array)
+puts "\nRuby Dynamic Array After Delete:"
+print_d_array(rb_array)
+
+rb_hash_sort1 = rb_hash.sort_by { |name, age| name }
+rb_hash_sort2 = rb_hash.sort_by { |name, age| age}
+puts "\nSorted Ruby Associative Array (Key):"
+print_hash(rb_hash_sort1)
+puts "\nSorted Ruby Associative Array (Value):"
+print_hash(rb_hash_sort2)
+
+rb_array_sort = rb_array.sort
+puts "\nSorted Ruby Dynamic Array:"
+print_d_array(rb_array_sort)
