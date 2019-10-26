@@ -109,27 +109,27 @@ int main(){
     printVector(cppVector);
 
     // Map.insert(pair<string, int>("Lisa", 21)) == Map.emplace("Lisa",21)
-    cppMap.emplace("Lisa",21);        // ends with a
+    cppMap.emplace("Lisa",21);              // ends with a
     cppMap.emplace("Lauren",32);
-    cppMap.emplace("Samantha",44);    // ends with a
+    cppMap.emplace("Samantha",44);          // ends with a
     cppMap.emplace("Alexis",54);
     cppMap.emplace("Jennifer",63);
-    cppMap.emplace("Miranda",27);     // ends with a
+    cppMap.emplace("Miranda",27);           // ends with a
     cppMap.emplace("Elizabeth",38);
     cppMap.emplace("Mary",49);
-    cppMap.emplace("Julia",42);       // ends with a
-    cppMap.emplace("Vanessa",36);     // ends with a
+    cppMap.emplace("Julia",42);             // ends with a
+    cppMap.emplace("Vanessa",36);           // ends with a
 
-    cppVector.emplace_back("Lisa");
+    cppVector.emplace_back("Lisa");         // ends with a
     cppVector.emplace_back("Lauren");
-    cppVector.emplace_back("Samantha");
+    cppVector.emplace_back("Samantha");     // ends with a
     cppVector.emplace_back("Alexis");
     cppVector.emplace_back("Jennifer");
-    cppVector.emplace_back("Miranda");
+    cppVector.emplace_back("Miranda");      // ends with a
     cppVector.emplace_back("Elizabeth");
     cppVector.emplace_back("Mary");
-    cppVector.emplace_back("Julia");
-    cppVector.emplace_back("Vanessa");
+    cppVector.emplace_back("Julia");        // ends with a
+    cppVector.emplace_back("Vanessa");      // ends with a
 
     cout << "\nUpdated C++ Map:" << endl;
     printMap(cppMap);
